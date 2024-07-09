@@ -16,7 +16,6 @@ function useGetConversations() {
                     throw new Error(data.error)
                 }
 
-                console.log(data);
                 setConversations(data);
             }
             catch(error){

@@ -11,7 +11,7 @@ function Messages() {
   useEffect(() => {
     setTimeout(() => {
       lastMessageRef.current.scrollIntoView({ behavior: "smooth" })
-    }, 100)
+    }, 300)
   }, [messages])
 
   return <div className='px-3 flex-1 overflow-auto'>
