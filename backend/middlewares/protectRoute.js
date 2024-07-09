@@ -8,7 +8,7 @@ async function protectRoute(req, res, next){
         const token = req.cookies.jwt
         if(!token){
             return res.status(401).json({
-                msg: "Unauthorized"
+                error: "Unauthorized"
             })
         }
 
@@ -16,7 +16,7 @@ async function protectRoute(req, res, next){
 
         if(!verified){
             return res.status(401).json({
-                msg: "Unauthorized"
+                error: "Unauthorized"
             })
         }
 
@@ -24,7 +24,7 @@ async function protectRoute(req, res, next){
         
         if(!user){
             return res.status(404).json({
-                msg: "User not found"
+                error: "User not found"
             })
         }
 
@@ -36,7 +36,7 @@ async function protectRoute(req, res, next){
         console.log("Error in the protectRoute middlware - ", error.message);
 
         res.status(500).json({
-            errors: "Error while authenticating the user."
+            error: "Error while authenticating the user."
         })
     }
 }

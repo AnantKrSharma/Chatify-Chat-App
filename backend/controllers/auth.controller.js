@@ -8,14 +8,14 @@ export async function signup(req, res){
 
         if(password !== confirmPassword){
             return res.status(400).json({
-                errors: "Passwords don't match."
+                error: "Passwords don't match."
             })
         }
 
         const found = await User.findOne({username});
         if(found){
             return res.status(400).json({
-                errors: "User already exists."
+                error: "User already exists."
             })
         }
         
@@ -48,7 +48,7 @@ export async function signup(req, res){
         console.log("Error in signup controller - ", error.message);
 
         res.status(500).json({
-            errors: "Error while creating new user."
+            error: "Error while creating new user."
         })
     }
 }
@@ -65,7 +65,7 @@ export async function login(req, res){
         
         if(!user || !isPasswordCorrect){
             return res.status(400).json({
-                errors: "Invalid username or password / Error while logging in."
+                error: "Invalid username or password."
             })
         }
 
@@ -82,7 +82,7 @@ export async function login(req, res){
         console.log("Error in login controller - ", error.message);
 
         res.status(500).json({
-            errors: "Error occured while logging in."
+            error: "Error occured while logging in."
         })
     }
 }
@@ -100,7 +100,7 @@ export async function logout(req, res){
         console.log("Error in logout controller - ", error.message);
 
         return res.status(400).json({
-            errors: "Error while logging out."
+            error: "Error while logging out."
         })
     }
 }

@@ -1,3 +1,4 @@
+import { query } from "express";
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
 
@@ -36,15 +37,13 @@ export async function sendMessage(req, res){
             })
         }
 
-        res.status(201).json({
-            newMessage
-        });
+        res.status(201).json(newMessage);
     }
     catch(error){
         console.log("Error in the sendMessage controller - ", error.message);
 
         res.status(500).json({
-            errors: "Error while sending message."
+            error: "Error while sending message."
         })
     }
 }
@@ -67,15 +66,13 @@ export async function getMessages(req, res){
 
         const messages = conversation.messages;
 
-        res.status(200).json({
-            messages
-        })
+        res.status(200).json(messages)
     }
     catch(error){
         console.log("Error in sendMessages controller - ", error.message);
 
         res.status(500).json({
-            errors: "Error while getting message."
+            error: "Error while getting message."
         })
     }
 }
