@@ -1,6 +1,7 @@
 import { query } from "express";
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
+import { getReceiverSocketID, io } from "../socket/socket.js";
 
 export async function sendMessage(req, res){
     try{
@@ -25,16 +26,20 @@ export async function sendMessage(req, res){
             receiverId,
             message
         })
-
-        // WE WILL ADD SOCKET.IO HERE
-
+        
         if(newMessage){
-           await Conversation.updateOne({_id: conversation._id}, 
-            {
-                $push:{
-                    messages: newMessage._id
-                }
-            })
+            await Conversation.updateOne({_id: conversation._id}, {
+                    $push:{
+                        messages: newMessage._id
+                    }
+                })
+        }
+            
+        // SOCKET.IO
+        const receiverSocketID = getReceiverSocketID(receiverId);
+        if(receiverSocketID){
+            // io.to(<socket_id>).emit() is used to send events to specific client.
+            io.to(receiverSocketID).emit('newMessage', newMessage)
         }
 
         res.status(201).json(newMessage);

@@ -16,7 +16,7 @@ function Login() {
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
 
-            <div className='border border-zinc-400 w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10'>
+            <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30'>
             
                 <h1 className='text-3xl font-semibold text-center text-white mb-5'>
                 Login -
