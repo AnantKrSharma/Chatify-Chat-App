@@ -1,5 +1,6 @@
 <h2 align="center">Live Link - https://chatify-agoz.onrender.com </h2>
 <br>
+
 # Chatify
 ## It is a real-time full stack Chat App made by me, comprised of the following tech-stack: 
 
