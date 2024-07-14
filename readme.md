@@ -1,4 +1,4 @@
-<h2 align="center">Live Link - https://chatify-agoz.onrender.com </h2>
+<h3 align="center">Live Link - https://chatify-agoz.onrender.com </h3>
 <br>
 
 # Chatify
