@@ -15,8 +15,8 @@
 
 
 ## Features: 
-- 🎃 Authentication & Authorization with JWT
 - 👾 Real-time messaging with Socket.io
+- 🎃 Authentication & Authorization with JWT
 - 🚀 Online user status (Socket.io and React Context)
 - 👌 Global state management with Zustand
 - 🐞 Error handling both on the server and on the client
