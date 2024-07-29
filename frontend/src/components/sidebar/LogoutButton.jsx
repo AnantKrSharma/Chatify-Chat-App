@@ -10,7 +10,7 @@ function LogoutButton() {
       {loading ? (
         <span className='loading loading-spinner loading-md'></span>
       ) : (
-        <button className='flex items-center gap-1 mt-2 w-min p-[6px] rounded-lg bg-red-700 text-white font-normal hover:bg-red-950 duration-[118ms]'
+        <button className='flex items-center gap-1 mt-2 w-min p-[6px] rounded-lg bg-red-700 text-white font-normal hover:bg-red-900 duration-[118ms]'
               onClick={logout}>
         <TbLogout2 className='w-6 h-6 text-white cursor-pointer'/> LogOut
       </button>
